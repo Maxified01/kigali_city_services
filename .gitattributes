@@ -1,0 +1,32 @@
+# Hide generated files from language stats
+*.dart linguist-detectable=true
+*.gradle linguist-generated=true
+*.kt linguist-generated=true
+*.java linguist-generated=true
+*.swift linguist-generated=true
+*.h linguist-generated=true
+*.m linguist-generated=true
+*.mm linguist-generated=true
+*.cpp linguist-generated=true
+*.c linguist-generated=true
+*.html linguist-generated=true
+*.css linguist-generated=true
+*.js linguist-generated=true
+*.xml linguist-generated=true
+*.properties linguist-generated=true
+*.plist linguist-generated=true
+*.sh linguist-generated=true
+*.bat linguist-generated=true
+*.cmd linguist-generated=true
+*.podspec linguist-generated=true
+*.podfile linguist-generated=true
+*.yaml linguist-generated=false
+
+# Mark entire directories as vendored (exclude from stats)
+/android/** linguist-vendored
+/ios/** linguist-vendored
+/build/** linguist-vendored
+/.dart_tool/** linguist-vendored
+/.idea/** linguist-vendored
+/.fvm/** linguist-vendored
+/coverage/** linguist-vendored
