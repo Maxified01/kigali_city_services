@@ -53,3 +53,58 @@ All data flows from `FirestoreService` → providers → UI widgets, ensuring a 
 git clone https://github.com/yourusername/kigali-city-services.git
 cd kigali-city-services
 flutter run
+
+### 2. Firebase Configuration
+Create a Firebase project at Firebase Console.
+
+Enable Email/Password authentication.
+
+Create a Firestore database in test mode (or use the rules below).
+
+Register an Android app with package name com.example.kigali_city_services.
+
+Download google-services.json and place it in android/app/.
+
+Add SHA‑1 fingerprint of your debug keystore (see Firebase docs).
+
+Enable Google Maps SDK for Android in Google Cloud Console and get an API key.
+
+### 3. Add API Keys
+In android/app/src/main/AndroidManifest.xml, add your Maps API key:
+
+xml
+<meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="YOUR_API_KEY_HERE"/>
+### 4. Run the App
+bash
+flutter pub get
+flutter run
+### 5. Firestore Security Rules (for development)
+javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /listings/{listing} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null 
+                            && request.auth.uid == resource.data.createdBy;
+    }
+  }
+}
+Built With
+Flutter
+
+Firebase Auth & Firestore
+
+Google Maps Flutter
+
+Riverpod
+
+url_launcher
+
+Author
+Emoh Anthony Chinedu
