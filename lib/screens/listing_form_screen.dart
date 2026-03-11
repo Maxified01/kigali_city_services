@@ -33,6 +33,8 @@ class _ListingFormScreenState extends ConsumerState<ListingFormScreen> {
     'Café',
     'Park',
     'Tourist Attraction',
+    'Mall',
+    'Government Facility',
   ];
 
   @override

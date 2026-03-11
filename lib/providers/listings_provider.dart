@@ -16,10 +16,8 @@ final allListingsStreamProvider = StreamProvider<List<Listing>>((ref) {
 // Search query state
 final searchQueryProvider = StateProvider<String>((ref) => '');
 
-// Selected category filter (null means all categories)
 final selectedCategoryProvider = StateProvider<String?>((ref) => null);
 
-// List of available categories (you can hardcode or fetch dynamically)
 final categoriesProvider = Provider<List<String>>((ref) {
   return [
     'Hospital',
@@ -29,6 +27,8 @@ final categoriesProvider = Provider<List<String>>((ref) {
     'Café',
     'Park',
     'Tourist Attraction',
+    'Mall',
+    'Government Facility',
   ];
 });
 

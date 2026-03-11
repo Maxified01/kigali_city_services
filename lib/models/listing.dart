@@ -25,7 +25,7 @@ class Listing {
     required this.createdAt,
   });
 
-  // Convert from Firestore document
+  // This converts from a Firestore document
   factory Listing.fromFirestore(String id, Map<String, dynamic> data) {
     return Listing(
       id: id,
@@ -41,7 +41,7 @@ class Listing {
     );
   }
 
-  // Convert to map for Firestore
+  // This converts to a map for Firestore
   Map<String, dynamic> toMap() {
     return {
       'name': name,
@@ -56,7 +56,7 @@ class Listing {
     };
   }
 
-  // CopyWith for updates
+  // This creates a new instance with updated values
   Listing copyWith({
     String? id,
     String? name,
